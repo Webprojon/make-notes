@@ -4,12 +4,12 @@ import { VitePWA } from "vite-plugin-pwa";
 
 const manifestForPlugin = {
 	registerType: "prompt",
-	includeAssets: ["favicon.ico", "apple-touc-icon.png", "maskable.png"],
+	includeAssets: ["favicon.ico", "apple-touch-icon.png", "maskable.png"],
 	manifest: {
 		name: "Notes app",
 		short_name: "Notes app",
-		description: "Make you notes",
-		icon: [
+		description: "Make your notes",
+		icons: [
 			{
 				src: "maskable.png",
 				sizes: "196x196",
@@ -23,7 +23,7 @@ const manifestForPlugin = {
 			},
 			{
 				src: "logo256.png",
-				sizes: "1256x256",
+				sizes: "256x256",
 				type: "image/png",
 			},
 			{
@@ -46,7 +46,6 @@ const manifestForPlugin = {
 	},
 };
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react(), VitePWA(manifestForPlugin)],
 });
