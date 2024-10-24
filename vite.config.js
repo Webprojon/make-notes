@@ -9,7 +9,7 @@ export default defineConfig({
 			registerType: "prompt",
 			includeAssets: ["favicon.ico", "apple-touch-icon.png", "maskable.png"],
 			manifest: {
-				name: "Notes app",
+				name: "Notes",
 				short_name: "Notes",
 				description: "Make your notes",
 				icons: [
