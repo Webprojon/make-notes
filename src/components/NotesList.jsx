@@ -1,68 +1,16 @@
-import { useState } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import Header from "./Header";
-import toast from "react-hot-toast";
-import { FaSearch } from "react-icons/fa";
+import AddNoteModal from "./AddNoteModal";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsOpenModal, setUpdateNotes } from "../redux/slices";
+import { FiPlus } from "react-icons/fi";
+import SearchNotes from "./SearchNotes";
 
 export default function NotesList() {
-	const [searchNotes, setSearchNotes] = useState("");
-	const [noteTitle, setNoteTitle] = useState("");
-	const [noteText, setNoteText] = useState("");
-	const [notesLimit, setNotesLimit] = useState(198);
-	const [notes, setNotes] = useState([
-		{
-			id: 1,
-			title: "This is my first note",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quae iusto dolores recusandae dolorem",
-			date: "21/10/2024",
-		},
-		{
-			id: 2,
-			title: "Pick up the groceries",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-			date: "22/10/2024",
-		},
-	]);
-
-	const handleCalculateNotesLimit = () => {
-		setNotesLimit((prevLimit) => prevLimit - 1);
-	};
-
-	const handleDateGenerator = () => {
-		const today = new Date();
-		return `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
-	};
-
-	const handleIdGenerator = (prevNotes) => {
-		if (prevNotes.length === 0) return 1;
-		const maxId = Math.max(...prevNotes.map((note) => note.id));
-		return maxId + 1;
-	};
-
-	const handleAddNote = () => {
-		if (noteTitle && noteText !== "") {
-			setNotes((prevNotes) => [
-				...prevNotes,
-				{
-					id: handleIdGenerator(prevNotes),
-					title: noteTitle,
-					text: noteText,
-					date: handleDateGenerator(),
-				},
-			]);
-
-			setNoteTitle("");
-			setNoteText("");
-			handleCalculateNotesLimit();
-		} else {
-			toast.error("Please fill inputs 😏");
-		}
-	};
-
-	const handleDeleteNote = (id) => {
-		setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
-		setNotesLimit((prevLimit) => prevLimit + 1);
-	};
+	const dispatch = useDispatch();
+	const { notes, isOpenModal, searchNotes } = useSelector(
+		(state) => state.global,
+	);
 
 	const searchedNotes = notes.filter((note) =>
 		note.title.toLowerCase().includes(searchNotes.toLowerCase()),
@@ -71,18 +19,7 @@ export default function NotesList() {
 	return (
 		<main className="notes__container">
 			<Header />
-
-			<section className="notes__search">
-				<input
-					type="text"
-					autoComplete="off"
-					value={searchNotes}
-					onChange={(e) => setSearchNotes(e.target.value)}
-					placeholder="Type to search..."
-					className="notes__search-input"
-				/>
-				<FaSearch className="notes__search-icon" />
-			</section>
+			<SearchNotes />
 
 			<section className="notes__list">
 				{searchedNotes.length > 0 ? (
@@ -95,7 +32,7 @@ export default function NotesList() {
 							<div className="notes__list-wrap">
 								<span className="notes__list-span">{note.date}</span>
 								<RiDeleteBin5Fill
-									onClick={() => handleDeleteNote(note.id)}
+									onClick={() => dispatch(setUpdateNotes(note.id))}
 									className="notes__list-delicon"
 								/>
 							</div>
@@ -110,30 +47,16 @@ export default function NotesList() {
 					</div>
 				)}
 
-				<div className="notes__add">
-					<div>
-						<input
-							type="text"
-							value={noteTitle}
-							autoComplete="off"
-							placeholder="Title"
-							className="notes__add-input"
-							onChange={(e) => setNoteTitle(e.target.value)}
-						/>
-						<textarea
-							value={noteText}
-							onChange={(e) => setNoteText(e.target.value)}
-							placeholder="Type to add a note..."
-							className="notes__add-textarea"
-						></textarea>
+				{isOpenModal ? (
+					<AddNoteModal />
+				) : (
+					<div
+						onClick={() => dispatch(setIsOpenModal())}
+						className="notes__add"
+					>
+						<FiPlus className="notes__add-plus-icon" />
 					</div>
-					<div className="notes__add-wrap">
-						<span className="notes__add-span">{notesLimit} Remaining</span>
-						<button onClick={handleAddNote} className="notes__add-btn">
-							Save
-						</button>
-					</div>
-				</div>
+				)}
 			</section>
 		</main>
 	);

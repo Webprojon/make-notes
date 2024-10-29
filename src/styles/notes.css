@@ -1,0 +1,158 @@
+.notes__container {
+	max-width: 1400px;
+	margin: 40px auto;
+}
+
+.notes__list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: start;
+	gap: 20px;
+}
+
+.notes__list-card {
+	width: 334px;
+	height: 28vh;
+	padding: 15px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	letter-spacing: 1px;
+	color: #3c3b3b;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	background: linear-gradient(330deg, #d9d9d9 54%, #cccccc 97%);
+}
+
+.notes__list-card:hover {
+	transition: all linear 0.2s;
+	background: linear-gradient(150deg, #d9d9d9 54%, #cccccc 97%);
+}
+
+.notes__list-card-notfound {
+	width: 334px;
+	height: 30vh;
+	padding: 15px;
+	border-radius: 15px;
+	letter-spacing: 1px;
+	color: #3c3b3b;
+	background: linear-gradient(150deg, #d9d9d9 54%, #cccccc 97%);
+}
+
+.notes__list-card-notfound-h2 {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.notes__list-card-notfound-span {
+	font-size: 40px;
+}
+
+.notes__list-title {
+	font-size: 20px;
+}
+
+.notes__list-text {
+	padding: 10px 0;
+	height: 15vh;
+	overflow-y: auto;
+	letter-spacing: 1px;
+	font-size: 14px;
+}
+
+.notes__list-text::-webkit-scrollbar {
+	display: none;
+}
+
+.notes__list-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.notes__list-span {
+	font-weight: 600;
+	font-size: 15px;
+}
+
+.notes__list-delicon {
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.notes__add {
+	padding: 10px 14px;
+	color: #3c3b3b;
+	cursor: pointer;
+	border-radius: 8px;
+	background-color: #d9d9d9;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.notes__add:hover {
+	background-color: #cccccc;
+}
+
+.notes__add-plus-icon {
+	font-size: 30px;
+}
+
+/* Media query | Responsive */
+@media (max-width: 480px) {
+	body {
+		padding: 10px 12px;
+	}
+
+	.notes__container {
+		margin: 10px auto;
+	}
+
+	.notes__header-btn {
+		padding: 11px 22px;
+	}
+
+	.notes__search-input {
+		padding: 20px 15px 20px 47px;
+		border-radius: 15px;
+	}
+
+	.notes__search-icon {
+		left: 6%;
+	}
+
+	.notes__list-card {
+		width: 100%;
+		height: 20vh;
+	}
+
+	.notes__list-card-notfound {
+		background-color: #d9d9d9;
+		width: 100%;
+		height: 20vh;
+	}
+
+	.notes__list-text {
+		height: 10vh;
+	}
+
+	.notes__add {
+		width: 100%;
+		height: 27vh;
+	}
+
+	.notes__add-input {
+		padding: 10px;
+	}
+
+	.notes__add-textarea {
+		height: 10vh;
+	}
+
+	.notes__add-wrap {
+		margin-top: 25px;
+	}
+
+	.notes__add-btn {
+		padding: 12px 30px;
+	}
+}

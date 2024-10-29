@@ -41,7 +41,7 @@ export default defineConfig({
 					},
 				],
 				theme_color: "#181818",
-				background_color: "#e8eac2",
+				background_color: "#C6C6C6",
 				display: "standalone",
 				scope: "/",
 				start_url: "/",
