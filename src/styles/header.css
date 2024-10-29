@@ -65,3 +65,20 @@
 	font-size: 20px;
 	color: #525252;
 }
+
+/* Media query | Responsive */
+@media (max-width: 480px) {
+	.notes__header-btn {
+		padding: 9px 15px;
+	}
+
+	.notes__search-input {
+		padding: 12px 10px 12px 40px;
+		border-radius: 8px;
+	}
+
+	.notes__search-icon {
+		font-size: 18px;
+		left: 7%;
+	}
+}

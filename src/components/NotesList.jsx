@@ -41,8 +41,7 @@ export default function NotesList() {
 				) : (
 					<div className="notes__list-card-notfound">
 						<h2 className="notes__list-card-notfound-h2">
-							Not found this note <br />{" "}
-							<span className="notes__list-card-notfound-span">🤷‍♂️</span>
+							Not found this note
 						</h2>
 					</div>
 				)}

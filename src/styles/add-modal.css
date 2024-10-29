@@ -74,3 +74,10 @@
 	background-color: #e0dfdf;
 	transition: all linear 0.2s;
 }
+
+/* Media query | Responsive */
+@media (max-width: 480px) {
+	.modal {
+		display: none;
+	}
+}
