@@ -1,84 +1,87 @@
 .notes__header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .notes__header-h1 {
-	font-size: 30px;
-	color: #525252;
+  font-size: 30px;
+  color: #525252;
 }
 
 .notes__header-btn {
-	background-color: #d9d9d9;
-	border: none;
-	padding: 10px 14px;
-	font-size: 14px;
-	color: #525252;
-	letter-spacing: 1px;
-	border-radius: 8px;
-	cursor: pointer;
-	transition: all linear 0.2s;
-	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-	display: flex;
-	align-items: center;
-	gap: 6px;
+  background-color: #d9d9d9;
+  border: none;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #525252;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all linear 0.2s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .notes__header-btn:hover {
-	background-color: #cac7c7;
+  background-color: #cac7c7;
 }
 
 .notes__header-btn:active {
-	box-shadow: none;
+  box-shadow: none;
 }
 
 .notes__search {
-	position: relative;
-	margin: 26px 0;
-	display: flex;
-	align-items: center;
-	gap: 20px;
+  position: relative;
+  margin: 26px 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .notes__search-input {
-	width: 100%;
-	color: #525252;
-	letter-spacing: 1px;
-	font-size: 16px;
-	padding: 14px 15px 14px 47px;
-	border: none;
-	border-radius: 24px;
-	outline: none;
-	background-color: #d9d9d9;
+  width: 100%;
+  color: #525252;
+  letter-spacing: 1px;
+  font-size: 16px;
+  padding: 14px 15px 14px 47px;
+  border: none;
+  border-radius: 24px;
+  outline: none;
+  background-color: #d9d9d9;
 }
 
 .notes__search-input::placeholder {
-	color: #525252;
+  color: #525252;
 }
 
 .notes__search-icon {
-	position: absolute;
-	top: 50%;
-	left: 1.9%;
-	transform: translate(-50%, -50%);
-	font-size: 20px;
-	color: #525252;
+  position: absolute;
+  top: 50%;
+  left: 1.9%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #525252;
 }
 
 /* Media query | Responsive */
 @media (max-width: 480px) {
-	.notes__header-btn {
-		padding: 9px 15px;
-	}
+  header {
+    background-color: red;
+  }
+  .notes__header-btn {
+    padding: 9px 15px;
+  }
 
-	.notes__search-input {
-		padding: 12px 10px 12px 40px;
-		border-radius: 8px;
-	}
+  .notes__search-input {
+    padding: 12px 10px 12px 40px;
+    border-radius: 8px;
+  }
 
-	.notes__search-icon {
-		font-size: 18px;
-		left: 7%;
-	}
+  .notes__search-icon {
+    font-size: 18px;
+    left: 7%;
+  }
 }
