@@ -40,9 +40,7 @@ export default function NotesList() {
           ))
         ) : (
           <div className="notes__list-card-notfound">
-            <h2 className="notes__list-card-notfound-h2">
-              Not found this note
-            </h2>
+            <h2 className="notes__list-card-notfound-h2">No notes here yet</h2>
           </div>
         )}
 

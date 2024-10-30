@@ -15,7 +15,7 @@ const initialState = {
       date: '22/10/2024',
     },
   ],
-  isOpenModal: true,
+  isOpenModal: false,
   searchNotes: '',
 };
 
