@@ -60,7 +60,7 @@ export default function AddNoteModal() {
         <textarea
           value={noteText}
           onChange={(e) => setNoteText(e.target.value)}
-          placeholder="Start writing"
+          placeholder="Type here"
           className="modal__add-textarea"
         ></textarea>
       </div>
@@ -71,7 +71,7 @@ export default function AddNoteModal() {
         >
           Cancel
         </button>
-        <button onClick={handleAddNote} className="modal__add-btn">
+        <button onClick={handleAddNote} className="modal__add-btn save">
           Save
         </button>
       </div>

@@ -5,14 +5,14 @@ const initialState = {
     {
       id: 1,
       title: 'This is my first note',
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quae iusto dolores recusandae dolorem',
-      date: '21/10/2024',
+      text: ' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, quaerat minus saepe.',
+      date: 'September 5',
     },
     {
       id: 2,
       title: 'Pick up the groceries',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-      date: '22/10/2024',
+      date: 'Yesterday 14:05',
     },
   ],
   isOpenModal: false,

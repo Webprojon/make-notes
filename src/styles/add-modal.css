@@ -7,9 +7,8 @@
   flex-direction: column;
   justify-content: space-between;
   letter-spacing: 1px;
-  color: #3c3b3b;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: linear-gradient(150deg, #d9d9d9 54%, #cccccc 97%);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ffffff;
 }
 
 .modal__head {
@@ -18,19 +17,18 @@
 
 .modal__add-input {
   width: 100%;
-  background-color: #ebe8e8;
-  color: #545454;
   letter-spacing: 1px;
   font-size: 14px;
   padding: 8px 10px;
-  border: none;
   border-radius: 8px;
   outline: none;
   font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .modal__add-input::placeholder {
-  color: #545454;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .modal__current-time {
@@ -41,20 +39,19 @@
 .modal__add-textarea {
   width: 100%;
   height: 9vh;
-  background-color: #ebe8e8;
-  color: #545454;
   letter-spacing: 1px;
   font-size: 14px;
   padding: 10px;
-  border: none;
   border-radius: 8px;
-  outline: none;
   resize: none;
+  outline: none;
   font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .modal__add-textarea::placeholder {
-  color: #545454;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .modal__add-textarea::-webkit-scrollbar {
@@ -69,17 +66,16 @@
 
 .modal__add-btn {
   font-weight: 600;
-  background-color: #ebe8e8;
-  color: #3c3b3b;
   padding: 8px 20px;
   border-radius: 8px;
   letter-spacing: 1px;
   cursor: pointer;
-  border: none;
+  color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .modal__add-btn:hover {
-  background-color: #e0dfdf;
+  background-color: #e7e7e7;
   transition: all linear 0.2s;
 }
 
@@ -92,32 +88,35 @@
     width: 100%;
     height: 100vh;
     justify-content: start;
+    padding: 20px 15px;
   }
 
   .modal__head {
     display: flex;
     justify-content: space-between;
-    color: #3c3b3b;
-    font-size: 24px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 26px;
   }
 
   .modal__add-input {
+    border: none;
+    font-size: 20px;
+    padding: 5px 0px;
+    margin-top: 20px;
     background: transparent;
-    font-size: 16px;
-    padding: 5px;
-    margin-top: 17px;
   }
 
   .modal__current-time {
-    padding: 5px;
+    font-size: 14px;
+    margin: 20px 0;
   }
 
   .modal__add-textarea {
+    border: none;
+    height: 20vh;
+    font-size: 18px;
+    padding: 5px 0px;
     background: transparent;
-    height: 15vh;
-    font-size: 15px;
-    padding: 5px;
-    border-radius: none;
   }
 
   .modal__add-wrap {
@@ -130,5 +129,15 @@
 
   .cancel {
     display: none;
+  }
+
+  .save {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    font-size: 17px;
+    padding: 14px 0px;
+    border-radius: 0px;
   }
 }

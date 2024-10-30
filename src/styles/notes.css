@@ -12,31 +12,25 @@
 
 .notes__list-card {
   width: 334px;
-  height: 28vh;
   padding: 15px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   letter-spacing: 1px;
-  color: #3c3b3b;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background: linear-gradient(330deg, #d9d9d9 54%, #cccccc 97%);
-}
-
-.notes__list-card:hover {
-  transition: all linear 0.2s;
-  background: linear-gradient(150deg, #d9d9d9 54%, #cccccc 97%);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ffffff;
 }
 
 .notes__list-card-notfound {
   width: 334px;
   height: 15vh;
+  font-size: 14px;
   padding: 15px;
   border-radius: 15px;
   letter-spacing: 1px;
-  color: #3c3b3b;
-  background: linear-gradient(150deg, #d9d9d9 54%, #cccccc 97%);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ffffff;
 }
 
 .notes__list-card-notfound-h2 {
@@ -49,7 +43,7 @@
 }
 
 .notes__list-text {
-  padding: 10px 0;
+  margin: 10px 0;
   height: 15vh;
   overflow-y: auto;
   letter-spacing: 1px;
@@ -67,8 +61,8 @@
 }
 
 .notes__list-span {
-  font-weight: 600;
   font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .notes__list-delicon {
@@ -78,15 +72,10 @@
 
 .notes__add {
   padding: 10px 14px;
-  color: #3c3b3b;
   cursor: pointer;
   border-radius: 8px;
-  background-color: #d9d9d9;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.notes__add:hover {
-  background-color: #cccccc;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ffffff;
 }
 
 .notes__add-plus-icon {
@@ -123,32 +112,20 @@
   }
 
   .notes__list-text {
-    display: none;
-  }
-
-  .notes__add {
-    width: 100%;
-    height: 27vh;
-  }
-
-  .notes__add-input {
-    padding: 10px;
-  }
-
-  .notes__add-textarea {
-    height: 10vh;
-  }
-
-  .notes__add-wrap {
-    margin-top: 25px;
-  }
-
-  .notes__list-span {
+    height: 3vh;
+    margin: 3px 0 0 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 13px;
   }
 
-  .notes__add-btn {
-    padding: 12px 30px;
+  .notes__list-span {
+    font-size: 12px;
+  }
+
+  .notes__list-delicon {
+    font-size: 18px;
   }
 
   .notes__add {
@@ -157,5 +134,6 @@
     right: 4%;
     width: 60px;
     height: 50px;
+    background-color: #fbc71d;
   }
 }
