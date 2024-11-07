@@ -26,12 +26,11 @@
   letter-spacing: 1px;
   transition: all linear 0.2s;
   color: rgba(0, 0, 0, 0.7);
-  background-color: #ffffff;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #f1f1f1;
 }
 
 .notes__header-btn:hover {
-  background-color: #f7f7f7;
+  background-color: #e8e7e7;
 }
 
 .notes__header-btn:active {
@@ -55,8 +54,7 @@
   outline: none;
   padding: 14px 15px 14px 47px;
   color: rgba(0, 0, 0, 0.7);
-  background-color: #ffffff;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #f1f1f1;
 }
 
 .notes__search-input::placeholder {

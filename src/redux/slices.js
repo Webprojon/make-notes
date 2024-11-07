@@ -3,15 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialNotes = [
   {
     id: 1,
-    title: 'This is my first note',
+    title: 'Firstly, using my Notes app',
     text: ' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, quaerat minus saepe.',
-    date: 'October 30',
+    date: 'November 3',
   },
   {
     id: 2,
     title: 'Pick up the groceries',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    date: 'November 4',
+    date: 'November 5',
   },
 ];
 

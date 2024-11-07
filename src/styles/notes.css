@@ -1,6 +1,6 @@
 .notes__container {
-  background-color: #e4e4e4;
   padding: 25px;
+  background-color: #deae10;
 }
 
 .notes__list {
@@ -22,7 +22,7 @@
   justify-content: space-between;
   letter-spacing: 1px;
   color: rgba(0, 0, 0, 0.7);
-  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .notes__list-card-notfound {
@@ -33,7 +33,7 @@
   border-radius: 15px;
   letter-spacing: 1px;
   color: rgba(0, 0, 0, 0.7);
-  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .notes__list-card-notfound-h2 {
@@ -83,6 +83,7 @@
   border-radius: 8px;
   color: rgba(0, 0, 0, 0.7);
   background-color: #fbc71d;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .notes__add-plus-icon {
@@ -94,19 +95,14 @@
   .notes__list {
     padding: 0 10px;
   }
-
-  .notes__container {
-    /*padding: 0px 10px;*/
-  }
 }
 
 @media (max-width: 480px) {
-  article {
+  .notes__container {
     padding: 10px 10px 1px 10px;
   }
 
   .notes__list {
-    /*padding: 0 10px;*/
     margin-top: 15px;
   }
 

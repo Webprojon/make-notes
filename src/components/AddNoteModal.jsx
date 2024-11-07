@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
-import { setIsOpenModal, setNotes } from '../redux/slices';
+import { setIsOpenModal, setNotes, setSearchNotes } from '../redux/slices';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 
@@ -19,47 +19,6 @@ export default function AddNoteModal() {
   };
 
   const setCurrentTime = () => {
-    const today = new Date();
-    const yesterday = new Date(today);
-    yesterday.setDate(today.getDate() - 1);
-
-    const options = { month: 'long', day: 'numeric' };
-    const hours = String(today.getHours()).padStart(2, '0');
-    const minutes = String(today.getMinutes()).padStart(2, '0');
-
-    // localStorage'da saqlangan vaqtni o'qiymiz
-    const storedDate = localStorage.getItem('storedDate');
-    console.log(storedDate);
-
-    if (storedDate) {
-      const storedDateObj = new Date(storedDate);
-
-      // Bugungi sanani tekshiramiz
-      if (storedDateObj.toDateString() === today.toDateString()) {
-        return `Today ${hours}:${minutes}`;
-      }
-      // Kechagi sanani tekshiramiz
-      else if (storedDateObj.toDateString() === yesterday.toDateString()) {
-        return `Yesterday ${hours}:${minutes}`;
-      }
-      // 2 kundan ko'proq o'tgan sanalar uchun
-      else {
-        const formattedDate = new Intl.DateTimeFormat('en-US', options).format(
-          storedDateObj,
-        );
-        return `${formattedDate} ${hours}:${minutes}`;
-      }
-    } else {
-      // Agar localStorage bo'sh bo'lsa, hozirgi sanani saqlaymiz
-      localStorage.setItem('storedDate', today);
-      return `Today ${hours}:${minutes}`;
-    }
-  };
-
-  // Funksiyani chaqirib natijani olamiz
-  setCurrentTime();
-
-  const showCurrentTime = () => {
     const today = new Date();
     const options = { month: 'long' };
     const day = today.getDate();
@@ -84,6 +43,7 @@ export default function AddNoteModal() {
       setNoteTitle('');
       setNoteText('');
       dispatch(setIsOpenModal());
+      dispatch(setSearchNotes(''));
     } else {
       toast.error('Please fill inputs 😏');
     }
@@ -110,7 +70,7 @@ export default function AddNoteModal() {
           onChange={(e) => setNoteTitle(e.target.value)}
         />
         <p className="modal__current-time">
-          {showCurrentTime()} Characters {character}
+          {setCurrentTime()} Characters {character}
         </p>
         <textarea
           value={noteText}
