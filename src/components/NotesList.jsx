@@ -17,9 +17,13 @@ export default function NotesList() {
   );
 
   return (
-    <main className="notes__container">
-      <Header />
-      <SearchNotes />
+    <main>
+      <section className="notes__container">
+        <div className="header">
+          <Header />
+          <SearchNotes />
+        </div>
+      </section>
 
       <section className="notes__list">
         {searchedNotes.length > 0 ? (
