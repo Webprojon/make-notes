@@ -2,8 +2,7 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsOpenModal, setNotes, setSearchNotes } from '../redux/slices';
-import { FaArrowLeftLong } from 'react-icons/fa6';
-import { RiDeleteBin5Fill } from 'react-icons/ri';
+import { FaArrowLeft } from 'react-icons/fa6';
 
 export default function Modal() {
   const dispatch = useDispatch();
@@ -63,11 +62,9 @@ export default function Modal() {
     <main className={`modal ${isDarkTheme && 'modal-dark'}`}>
       <div
         className="modal__head"
-        onClick={() => dispatch(setIsOpenModal())}
         style={{ color: `${isDarkTheme && '#c0c0c0'}` }}
       >
-        <FaArrowLeftLong />
-        <RiDeleteBin5Fill />
+        <FaArrowLeft onClick={() => dispatch(setIsOpenModal())} />
       </div>
       <div>
         <input

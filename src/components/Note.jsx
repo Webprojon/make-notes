@@ -1,4 +1,4 @@
-import { FaArrowLeftLong } from 'react-icons/fa6';
+import { FaArrowLeft } from 'react-icons/fa6';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -31,7 +31,7 @@ export default function Note() {
         <p>{note.text}</p>
         <span>{note.date}</span>
         <div className="note__icons">
-          <FaArrowLeftLong onClick={() => navigate('/')} />
+          <FaArrowLeft onClick={() => navigate('/')} />
           <RiDeleteBin5Fill onClick={deleteIcon} />
         </div>
       </div>
