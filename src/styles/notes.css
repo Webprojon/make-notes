@@ -28,6 +28,12 @@
   margin: 30px auto;
 }
 
+.notes__link {
+  height: 19vh;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
 .notes__list-card {
   width: 334px;
   height: 28vh;
@@ -86,10 +92,6 @@
 .notes__list-span {
   font-size: 15px;
   color: rgba(0, 0, 0, 0.6);
-}
-
-.notes__list-span-dark {
-  color: #a7a7a7;
 }
 
 .notes__list-delicon {

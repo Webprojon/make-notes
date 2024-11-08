@@ -5,13 +5,13 @@ const initialNotes = [
     id: 1,
     title: 'Firstly, using my Notes app',
     text: ' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, quaerat minus saepe.',
-    date: 'November 3',
+    date: '3 November 14:09',
   },
   {
     id: 2,
     title: 'Pick up the groceries',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    date: 'November 5',
+    date: '5 November 08:30',
   },
 ];
 

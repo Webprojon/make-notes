@@ -61,7 +61,11 @@ export default function Modal() {
 
   return (
     <main className={`modal ${isDarkTheme && 'modal-dark'}`}>
-      <div onClick={() => dispatch(setIsOpenModal())} className="modal__head">
+      <div
+        className="modal__head"
+        onClick={() => dispatch(setIsOpenModal())}
+        style={{ color: `${isDarkTheme && '#c0c0c0'}` }}
+      >
         <FaArrowLeftLong />
         <RiDeleteBin5Fill />
       </div>

@@ -5,6 +5,7 @@ import { setIsOpenModal, setUpdateNotes } from '../redux/slices';
 import { FiPlus } from 'react-icons/fi';
 import Modal from './Modal';
 import Search from './Search';
+import { Link } from 'react-router-dom';
 
 export default function Notes() {
   const dispatch = useDispatch();
@@ -16,6 +17,8 @@ export default function Notes() {
     color: '#a7a7a7',
     backgroundColor: '#0f1d30',
   };
+
+  const darkMode = isDarkTheme ? generalStyle : null;
 
   const searchedNotes = notes.filter((note) =>
     note.title.toLowerCase().includes(searchNotes.toLowerCase()),
@@ -35,19 +38,17 @@ export default function Notes() {
       <section className="notes__list">
         {searchedNotes.length > 0 ? (
           searchedNotes.map((note) => (
-            <div
-              key={note.id}
-              className="notes__list-card"
-              style={isDarkTheme ? generalStyle : null}
-            >
-              <div>
-                <h2 className="notes__list-title">{note.title}</h2>
-                <p className="notes__list-text">{note.text}</p>
-              </div>
+            <div key={note.id} className="notes__list-card" style={darkMode}>
+              <Link to={`/note/${note.id}`} className="notes__link">
+                <h2 className="notes__list-title" style={darkMode}>
+                  {note.title}
+                </h2>
+                <p className="notes__list-text" style={darkMode}>
+                  {note.text}
+                </p>
+              </Link>
               <div className="notes__list-wrap">
-                <span
-                  className={`notes__list-span ${isDarkTheme && 'notes__list-span-dark'}`}
-                >
+                <span style={darkMode} className="notes__list-span">
                   {note.date}
                 </span>
                 <RiDeleteBin5Fill
@@ -58,10 +59,7 @@ export default function Notes() {
             </div>
           ))
         ) : (
-          <div
-            className="notes__list-card-notfound"
-            style={isDarkTheme ? generalStyle : null}
-          >
+          <div className="notes__list-card-notfound" style={darkMode}>
             <h2 className="notes__list-card-notfound-h2">No notes here yet</h2>
           </div>
         )}
@@ -70,9 +68,9 @@ export default function Notes() {
           <Modal />
         ) : (
           <div
+            style={darkMode}
             className="notes__add"
             onClick={() => dispatch(setIsOpenModal())}
-            style={isDarkTheme ? generalStyle : null}
           >
             <FiPlus className="notes__add-plus-icon" />
           </div>

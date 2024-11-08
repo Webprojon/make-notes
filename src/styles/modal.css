@@ -106,11 +106,11 @@
   }
 
   .modal__add-input {
-    border: none;
     font-size: 22px;
-    padding: 5px 0px;
+    padding: 5px 6px;
     margin-top: 25px;
     background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.3);
   }
 
   .modal__current-time {
@@ -119,11 +119,11 @@
   }
 
   .modal__add-textarea {
-    border: none;
     height: 20vh;
     font-size: 20px;
-    padding: 5px 0px;
+    padding: 5px 6px;
     background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.3);
   }
 
   .modal__add-wrap {
