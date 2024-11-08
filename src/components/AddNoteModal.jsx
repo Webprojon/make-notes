@@ -10,7 +10,12 @@ export default function AddNoteModal() {
   const [character, setCharacter] = useState(0);
   const [noteTitle, setNoteTitle] = useState('');
   const [noteText, setNoteText] = useState('');
-  const { notes } = useSelector((state) => state.global);
+  const { notes, isDarkTheme } = useSelector((state) => state.global);
+
+  const styles = {
+    backgroundColor: '#a7a7a7',
+  };
+  const darkMode = isDarkTheme ? styles : null;
 
   const handleIdGenerator = (prevNotes) => {
     if (prevNotes.length === 0) return 1;
@@ -55,7 +60,7 @@ export default function AddNoteModal() {
   };
 
   return (
-    <main className="modal">
+    <main className={`modal ${isDarkTheme && 'modal-dark'}`}>
       <div onClick={() => dispatch(setIsOpenModal())} className="modal__head">
         <FaArrowLeftLong />
         <RiDeleteBin5Fill />
@@ -63,6 +68,7 @@ export default function AddNoteModal() {
       <div>
         <input
           type="text"
+          style={darkMode}
           value={noteTitle}
           autoComplete="off"
           placeholder="Title"
@@ -73,20 +79,26 @@ export default function AddNoteModal() {
           {setCurrentTime()} Characters {character}
         </p>
         <textarea
+          style={darkMode}
           value={noteText}
-          onChange={handleTextArea}
           placeholder="Type here"
+          onChange={handleTextArea}
           className="modal__add-textarea"
         ></textarea>
       </div>
       <div className="modal__add-wrap">
         <button
-          onClick={() => dispatch(setIsOpenModal())}
+          style={darkMode}
           className="modal__add-btn cancel"
+          onClick={() => dispatch(setIsOpenModal())}
         >
           Cancel
         </button>
-        <button onClick={handleAddNote} className="modal__add-btn save">
+        <button
+          style={darkMode}
+          onClick={handleAddNote}
+          className="modal__add-btn save"
+        >
           Save
         </button>
       </div>
