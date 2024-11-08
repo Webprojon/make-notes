@@ -5,7 +5,7 @@ import { setIsOpenModal, setNotes, setSearchNotes } from '../redux/slices';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 
-export default function AddNoteModal() {
+export default function Modal() {
   const dispatch = useDispatch();
   const [character, setCharacter] = useState(0);
   const [noteTitle, setNoteTitle] = useState('');

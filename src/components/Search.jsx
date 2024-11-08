@@ -2,7 +2,7 @@ import { FaSearch } from 'react-icons/fa';
 import { setSearchNotes } from '../redux/slices';
 import { useDispatch, useSelector } from 'react-redux';
 
-export default function SearchNotes() {
+export default function Search() {
   const { searchNotes, isDarkTheme } = useSelector((state) => state.global);
   const dispatch = useDispatch();
 

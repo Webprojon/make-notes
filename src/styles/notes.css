@@ -1,4 +1,16 @@
+.main-dark {
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #16263c;
+}
+
+.main-dark::-webkit-scrollbar {
+  display: none;
+}
+
 .notes__container {
+  position: sticky;
+  top: 0px;
   padding: 25px;
   background-color: #deae10;
 }

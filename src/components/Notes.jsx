@@ -1,23 +1,16 @@
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 import Header from './Header';
-import AddNoteModal from './AddNoteModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsOpenModal, setUpdateNotes } from '../redux/slices';
 import { FiPlus } from 'react-icons/fi';
-import SearchNotes from './SearchNotes';
-import { useEffect } from 'react';
+import Modal from './Modal';
+import Search from './Search';
 
-export default function NotesList() {
+export default function Notes() {
   const dispatch = useDispatch();
   const { notes, isOpenModal, searchNotes, isDarkTheme } = useSelector(
     (state) => state.global,
   );
-
-  useEffect(() => {
-    isDarkTheme
-      ? document.body.classList.add('body-dark')
-      : document.body.classList.remove('body-dark');
-  }, [isDarkTheme]);
 
   const generalStyle = {
     color: '#a7a7a7',
@@ -29,13 +22,13 @@ export default function NotesList() {
   );
 
   return (
-    <main>
+    <main className={`${isDarkTheme && 'main-dark'}`}>
       <section
         className={`notes__container ${isDarkTheme && 'notes__container-dark'}`}
       >
         <div className="header">
           <Header />
-          <SearchNotes />
+          <Search />
         </div>
       </section>
 
@@ -74,7 +67,7 @@ export default function NotesList() {
         )}
 
         {isOpenModal ? (
-          <AddNoteModal />
+          <Modal />
         ) : (
           <div
             className="notes__add"
