@@ -12,7 +12,7 @@
   position: sticky;
   top: 0px;
   padding: 25px;
-  background-color: #deae10;
+  background-color: #ffd52a;
 }
 
 .notes__container-dark {
@@ -104,7 +104,7 @@
   padding: 9px 14px;
   border-radius: 8px;
   color: rgba(0, 0, 0, 0.7);
-  background-color: #fbc71d;
+  background-color: #ffd52a;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
